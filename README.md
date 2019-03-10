@@ -1,4 +1,0 @@
-#DON'T
-#TOUCH
-#THIS IS
-#MY BOTTLE

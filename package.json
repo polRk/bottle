@@ -1,0 +1,26 @@
+{
+  "name": "notes-in-bottle",
+  "version": "1.0.0",
+  "description": "Your notes in bottle",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "test": "jest"
+  },
+  "author": "Vladislav Polyakov",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.7",
+    "@types/react-dom": "^16.8.2",
+    "autoprefixer": "^9.4.10",
+    "jest": "^24.3.1",
+    "parcel-bundler": "^1.12.0",
+    "typescript": "^3.3.3333"
+  }
+}

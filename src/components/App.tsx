@@ -1,11 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 
-const App = () => {
-  return (
-    <div>
-      Hello World!
-    </div>
-  );
-};
+const App: React.FC = props => {
+  return <div>I can fly 3!</div>
+}
 
-export default App;
+export default App

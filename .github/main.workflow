@@ -21,6 +21,6 @@ action "Deploy" {
   ]
   needs = ["Build"]
   env = {
-    PUBLIC_PATH = "build"
+    PUBLIC_PATH = "dist"
   }
 }

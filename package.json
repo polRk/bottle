@@ -8,6 +8,7 @@
     "start": "parcel lib/index.html -p 3000",
     "build": "npm run type-check && parcel build ./lib/index.html --public-url '/'",
     "prettify": "prettier --write './src/**/*.{ts,tsx}'",
+    "lint": "tslint-config-prettier-check ./tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "type-check": "tsc --noEmit",
@@ -16,6 +17,7 @@
   "author": "Vladislav Polyakov",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "redux": "^4.0.1"
@@ -25,6 +27,7 @@
     "@babel/preset-env": "7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.122",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
     "autoprefixer": "^9.4.10",
@@ -34,11 +37,15 @@
     "parcel-bundler": "^1.12.0",
     "prettier": "1.16.4",
     "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettify && npm run test"
+      "pre-commit": "npm run lint && npm run prettify && npm run test"
     }
   },
   "engines": {

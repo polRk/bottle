@@ -4,15 +4,16 @@
   "description": "Your notes in bottle",
   "main": "index.js",
   "scripts": {
-    "develop": "concurrently -r \"npm:type-check:watch\" \"npm:start\"",
+    "develop": "concurrently -r \"npm:ts-build:watch\" \"npm:start\"",
     "start": "parcel lib/index.html -p 3000",
-    "build": "npm run type-check && parcel build ./lib/index.html --public-url '/'",
+    "build": "npm run ts-build && parcel build ./lib/index.html --public-url '/'",
     "prettify": "prettier --write './src/**/*.{ts,tsx}'",
     "lint": "tslint-config-prettier-check ./tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "tsc -w --noEmit"
+    "ts-check": "tsc --noEmit",
+    "ts-build": "tsc",
+    "ts-build:watch": "tsc -w"
   },
   "author": "Vladislav Polyakov",
   "license": "MIT",
@@ -45,7 +46,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run prettify && npm run test"
+      "pre-commit": "npm run ts-check && npm run lint && npm run prettify && npm run test"
     }
   },
   "engines": {

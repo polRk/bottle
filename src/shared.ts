@@ -55,36 +55,36 @@ export interface INoteProcessed extends INote {
 export class Notes {
   notes: Partial<INoteProcessed>[] = []
 
-  static factory(data: IData): Partial<INoteProcessed>[] {
-    return data.notes.map(note => ({
+  static factory (data: IData): Partial<INoteProcessed>[] {
+    return data.notes.map(note => ( {
       ...note,
-      tags: data.tags.filter(tag => (note.tags || []).includes(tag.id)),
+      tags: data.tags.filter(tag => ( note.tags || [] ).includes(tag.id)),
       color: data.colors.find(color => color.id === note.color),
-    }))
+    } ))
   }
 
-  constructor(data: IData) {
+  constructor (data: IData) {
     this.notes = Notes.factory(data)
   }
 
-  private getNoteSize(note: Partial<INoteProcessed>): INoteSize {
+  private getNoteSize (note: Partial<INoteProcessed>): INoteSize {
     const assert = {
-      [INoteType.list]: INoteSize.l,
-      [INoteType.image]: INoteSize.m,
-      [INoteType.text]: INoteSize.s,
+      [ INoteType.list ]: INoteSize.l,
+      [ INoteType.image ]: INoteSize.m,
+      [ INoteType.text ]: INoteSize.s,
     }
 
-    return assert[note.type || INoteType.text]
+    return assert[ note.type || INoteType.text ]
   }
 
-  addNote(note: Partial<INoteProcessed>): void {
+  addNote (note: Partial<INoteProcessed>): void {
     this.notes.push({
       ...note,
       size: note.size ? note.size : this.getNoteSize(note),
     })
   }
 
-  toArray(): Partial<INoteProcessed>[] {
+  toArray (): Partial<INoteProcessed>[] {
     return { ...this.notes }
   }
 }

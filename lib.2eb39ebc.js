@@ -28,4 +28,4 @@ var e=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0});var n=
 },{"react":"1n8/","./Main":"YxD0","./Header":"RzfG","@bem-react/classname":"fzO/","./Footer":"9f+Z"}],"Focm":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react"),r=require("react-dom"),t=require("./components/App");r.render(e.createElement(t.default,null),document.getElementById("root"));
 },{"react":"1n8/","react-dom":"NKHc","./components/App":"le+d"}]},{},["Focm"], null)
-//# sourceMappingURL=/lib.35044b38.js.map
+//# sourceMappingURL=/lib.2eb39ebc.js.map

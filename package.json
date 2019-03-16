@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel src/index.html -p 3000",
     "build": "parcel build ./src/index.html --public-url '/'",
-    "prettify": "prettier --write './src/**/*.{ts,tsx}'",
+    "prettify": "prettier --write './src/**/*.{ts,tsx,css,scss}'",
     "lint": "tslint-config-prettier-check ./tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",

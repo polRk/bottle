@@ -672,6 +672,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@bem-react/classname@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@bem-react/classname/-/classname-1.4.4.tgz#f436aae5d633311e8451f41de0c39eabc7b1e2a8"
+  integrity sha512-QSpBd6lYzJPUMp/CI8eYUf17VQJBMw0/79lY2uGEivHBmddNfRUEEqNy2jo/tP+VcRj2UhmHgmK5YMl+QVF40w==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"

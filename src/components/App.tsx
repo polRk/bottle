@@ -4,6 +4,7 @@ import { Header } from './Header'
 import { cn } from '@bem-react/classname'
 import { Footer } from './Footer'
 import './index.scss'
+
 const appCN = cn('App')
 
 const App: React.FC = () => {

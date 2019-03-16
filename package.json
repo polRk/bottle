@@ -57,7 +57,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,sass}": [
+    "*.{ts,tsx,scss}": [
       "npm run prettify",
       "git add"
     ]

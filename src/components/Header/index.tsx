@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { cn } from '@bem-react/classname'
+import './index.sass'
 
 const headerCN = cn('Header')
 
 export const Header: React.FC = () => {
-  return <header className={headerCN()} />
+  return <header className={headerCN()}>Hello World</header>
 }

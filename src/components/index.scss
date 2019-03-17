@@ -6,5 +6,12 @@
   &-Main {
     justify-items: center;
     display: grid;
+    grid-template-rows: auto 1fr;
+    background: #f2f2f2;
+
+    > * {
+      max-width: 1020px;
+      width: 100%;
+    }
   }
 }

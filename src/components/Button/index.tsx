@@ -24,3 +24,9 @@ export const Button: React.FC<IButtonProps> = ({ children, variant }) => {
 Button.defaultProps = {
   variant: undefined,
 }
+
+export const ButtonGroup: React.FC<{ children: React.ReactNode[] }> = ({
+  children,
+}) => {
+  return <div className={buttonCN('Group')}>{children}</div>
+}

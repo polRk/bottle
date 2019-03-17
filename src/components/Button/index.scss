@@ -10,4 +10,10 @@
     background: #ffcc00;
     border-radius: 4px;
   }
+
+  &-Group {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 16px;
+  }
 }

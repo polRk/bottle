@@ -1,9 +1,9 @@
-export interface Tag {
+export interface ITag {
   id: number
   tag: string
 }
 
-export interface Color {
+export interface IColor {
   id: number
   color: string
 }

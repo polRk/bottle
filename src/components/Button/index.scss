@@ -1,0 +1,13 @@
+.Button {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &_primary {
+    background: #ffcc00;
+    border-radius: 4px;
+  }
+}

@@ -7,14 +7,19 @@
   cursor: pointer;
   border-radius: 4px;
   min-height: 32px;
+  color: #333333;
 
   &_primary {
     background: #ffcc00;
     padding: 4px 16px;
+    color: #000000;
   }
 
   &_link {
     color: rgba(51, 51, 51, 0.6);
+    &:hover {
+      color: #333333;
+    }
   }
 
   &_filter {

@@ -10,8 +10,8 @@ export const Navigation: React.FC = () => {
     <nav className={navigationCN()}>
       <ButtonGroup>
         <Button>Активные</Button>
-        <Button variant={'link'}>Архив</Button>
-        <Button variant={'primary'}>Добавить</Button>
+        <Button appearance={'link'}>Архив</Button>
+        <Button appearance={'primary'}>Добавить</Button>
       </ButtonGroup>
     </nav>
   )

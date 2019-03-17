@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Your notes in bottle",
   "main": "index.js",
+  "homepage": "https://bottle.polrk.com",
   "scripts": {
     "start": "parcel src/index.html -p 3000",
     "build": "parcel build ./src/index.html --public-url '/'",

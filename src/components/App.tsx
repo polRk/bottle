@@ -5,7 +5,7 @@ import { cn } from '@bem-react/classname'
 import { Footer } from './Footer'
 import './index.scss'
 import { Filters } from './Filters'
-import { dispatch, useGlobalState } from '../store'
+import { dispatch } from '../store'
 import { FAILURE_NOTES, FETCH_NOTES, SUCCESS_NOTES } from '../store/constants'
 import { useEffect } from 'react'
 

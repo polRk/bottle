@@ -1,0 +1,13 @@
+.Filters {
+  display: grid;
+  padding: 32px 0;
+  grid-auto-flow: column;
+  grid-column-gap: 16px;
+  grid-auto-columns: min-content;
+
+  &-Title {
+    margin: 0;
+    font-size: 36px;
+    line-height: 32px;
+  }
+}

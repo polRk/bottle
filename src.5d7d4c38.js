@@ -46,4 +46,4 @@ var e=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0});var n=
 },{"react":"1n8/","./Main":"A2Ty","./Header":"qWdD","@bem-react/classname":"fzO/","./Footer":"h6X1","./index.scss":"OK24","./Filters":"gKjO","../store":"heVO","../store/constants":"S8Cn"}],"zo2T":[function(require,module,exports) {
 "use strict";var e=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var r={};if(null!=e)for(var t in e)Object.hasOwnProperty.call(e,t)&&(r[t]=e[t]);return r.default=e,r},r=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0});var t=e(require("react")),u=require("react-dom"),l=require("./store"),n=r(require("./components/App"));u.render(t.createElement(l.GlobalStateProvider,null,t.createElement(n.default,null)),document.getElementById("root"));
 },{"react":"1n8/","react-dom":"NKHc","./store":"heVO","./components/App":"cjTR"}]},{},["zo2T"], null)
-//# sourceMappingURL=/src.fc181c3c.js.map
+//# sourceMappingURL=/src.5d7d4c38.js.map

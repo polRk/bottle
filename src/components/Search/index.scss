@@ -1,2 +1,56 @@
 .Search {
+  grid-area: search;
+
+  &-Form {
+    display: flex;
+
+    input {
+      outline: none;
+    }
+  }
+
+  &-Input {
+    flex: 1;
+    border: 2px solid #e6e6e6;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 15px;
+    position: relative;
+    padding-left: 12px;
+    -webkit-appearance: none;
+
+    &::placeholder {
+      color: #000000;
+      opacity: 0.2;
+    }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  &-Label {
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 8px;
+      left: -4px;
+      height: 100%;
+      position: absolute;
+      background: #e6e6e6;
+      z-index: -1;
+    }
+  }
+
+  &-Submit {
+    background: #e6e6e6;
+    border-radius: 0 4px 4px 0;
+    font-size: 15px;
+    line-height: 32px;
+    padding: 0 16px;
+    border: none;
+    cursor: pointer;
+  }
 }

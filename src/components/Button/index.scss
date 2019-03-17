@@ -1,20 +1,42 @@
 .Button {
   font-size: 1rem;
   line-height: 1.5;
-  padding: 4px 16px;
+  padding: 4px 0;
   background: transparent;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
+  min-height: 32px;
 
   &_primary {
     background: #ffcc00;
-    border-radius: 4px;
+    padding: 4px 16px;
+  }
+
+  &_link {
+    color: rgba(51, 51, 51, 0.6);
+  }
+
+  &_filter {
+    border-radius: 8px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+
+    > svg {
+      padding: 10px 8px;
+    }
+  }
+
+  &_filter:hover,
+  &_selected {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   }
 
   &-Group {
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: 16px;
+    grid-column-gap: 32px;
     grid-auto-columns: max-content;
   }
 }

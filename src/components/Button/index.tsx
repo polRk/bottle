@@ -5,16 +5,27 @@ import './index.scss'
 const buttonCN = cn('Button')
 
 interface IButtonProps {
-  variant?: 'primary' | 'link'
+  appearance?: 'primary' | 'link' | 'filter'
+  isSelected?: boolean
+  bgColor?: string
 }
 
-export const Button: React.FC<IButtonProps> = ({ children, variant }) => {
+export const Button: React.FC<IButtonProps> = ({
+  appearance,
+  children,
+  bgColor,
+  isSelected,
+}) => {
   return (
     <button
-      className={buttonCN({
-        primary: variant === 'primary',
-        link: variant === 'link',
-      })}
+      className={buttonCN(
+        Object.assign(
+          {},
+          appearance ? { [appearance]: true } : {},
+          isSelected ? { selected: true } : {}
+        )
+      )}
+      style={{ backgroundColor: bgColor }}
     >
       {children}
     </button>
@@ -22,7 +33,7 @@ export const Button: React.FC<IButtonProps> = ({ children, variant }) => {
 }
 
 Button.defaultProps = {
-  variant: undefined,
+  appearance: undefined,
 }
 
 export const ButtonGroup: React.FC<{ children: React.ReactNode[] }> = ({

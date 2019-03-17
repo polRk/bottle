@@ -1,12 +1,12 @@
 import { createStore } from 'react-hooks-global-state'
 import { FAILURE_NOTES, FETCH_NOTES, SUCCESS_NOTES } from './constants'
-import { Color, Note, Tag } from '../shared'
+import { IColor, Note, ITag } from '../shared'
 import { unionBy } from 'lodash'
 
 export interface IState {
   notes: Note[]
-  colors: Color[]
-  tags: Tag[]
+  colors: IColor[]
+  tags: ITag[]
   loading: boolean
   failure: boolean
 }
@@ -15,7 +15,7 @@ type Action =
   | { type: typeof FETCH_NOTES }
   | {
       type: typeof SUCCESS_NOTES
-      payload: { notes: Note[]; colors: Color[]; tags: Tag[] }
+      payload: { notes: Note[]; colors: IColor[]; tags: ITag[] }
     }
   | { type: typeof FAILURE_NOTES; message: string }
 

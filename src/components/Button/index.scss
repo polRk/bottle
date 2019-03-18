@@ -8,6 +8,7 @@
   border-radius: 4px;
   min-height: 32px;
   color: #333333;
+  outline: none;
 
   &_primary {
     background: #ffcc00;
@@ -34,6 +35,7 @@
   }
 
   &_filter:hover,
+  &_filter:focus,
   &_selected {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   }

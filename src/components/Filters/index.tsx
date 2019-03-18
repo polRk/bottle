@@ -27,17 +27,19 @@ export const Filters: React.FC = () => {
   return (
     <div className={filtersCN()}>
       <h1 className={filtersCN('Title')}>Заметки</h1>
-      {colors.map(color => (
-        <Button
-          bgColor={color.color}
-          appearance={'filter'}
-          key={color.id}
-          isSelected={color.id === 2}
-        >
-          {/* TODO: Написать логику */}
-          {color.id === 2 && <ActiveFilter />}
-        </Button>
-      ))}
+      <div className={filtersCN('Options')}>
+        {colors.map(color => (
+          <Button
+            bgColor={color.color}
+            appearance={'filter'}
+            key={color.id}
+            isSelected={color.id === 2}
+          >
+            {/* TODO: Написать логику */}
+            {color.id === 2 && <ActiveFilter />}
+          </Button>
+        ))}
+      </div>
     </div>
   )
 }

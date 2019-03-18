@@ -1,4 +1,8 @@
 .Navigation {
   grid-area: navigation;
   justify-self: end;
+
+  @media screen and (max-width: 1020px) {
+    display: none;
+  }
 }

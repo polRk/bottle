@@ -43,3 +43,4 @@ export const Filters: React.FC = () => {
     </div>
   )
 }
+Filters.displayName = 'Filters'

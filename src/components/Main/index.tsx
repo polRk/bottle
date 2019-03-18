@@ -18,3 +18,4 @@ export const Main: React.FC = () => {
     </main>
   )
 }
+Main.displayName = 'Main'

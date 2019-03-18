@@ -28,3 +28,4 @@ export const Logo: React.FC = () => {
     </span>
   )
 }
+Logo.displayName = 'Logo'

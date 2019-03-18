@@ -35,3 +35,4 @@ export const Search: React.FC = () => {
     </div>
   )
 }
+Search.displayName = 'Search'

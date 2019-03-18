@@ -17,7 +17,7 @@ interface IResponse {
   tags: []
 }
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   useEffect(() => {
     dispatch({ type: FETCH_NOTES })
     fetch(
@@ -45,5 +45,4 @@ const App: React.FC = () => {
     </div>
   )
 }
-
-export default App
+App.displayName = 'App'

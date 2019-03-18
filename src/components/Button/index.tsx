@@ -31,10 +31,7 @@ export const Button: React.FC<IButtonProps> = ({
     </button>
   )
 }
-
-Button.defaultProps = {
-  appearance: undefined,
-}
+Button.displayName = 'Button'
 
 export const ButtonGroup: React.FC<{ children: React.ReactNode[] }> = ({
   children,

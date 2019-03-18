@@ -16,3 +16,4 @@ export const Navigation: React.FC = () => {
     </nav>
   )
 }
+Navigation.displayName = 'Navigation'

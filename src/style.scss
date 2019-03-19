@@ -1,7 +1,16 @@
 html,
 body,
-input {
+input,
+h1,
+h2,
+p {
   padding: 0;
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
+}
+
+p {
+  font-weight: 100;
+  line-height: 22px;
+  font-size: 18px;
 }

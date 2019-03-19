@@ -1,5 +1,10 @@
 import { createStore } from 'react-hooks-global-state'
-import { FAILURE_NOTES, FETCH_NOTES, SUCCESS_NOTES } from './constants'
+import {
+  FAILURE_NOTES,
+  FETCH_NOTES,
+  SELECT_NOTE,
+  SUCCESS_NOTES,
+} from './constants'
 import { IColor, Note, ITag } from '../shared'
 import { unionBy } from 'lodash'
 
@@ -9,9 +14,11 @@ export interface IState {
   tags: ITag[]
   loading: boolean
   failure: boolean
+  activeNote?: Note
 }
 
 type Action =
+  | { type: typeof SELECT_NOTE; payload: { note: Note } }
   | { type: typeof FETCH_NOTES }
   | {
       type: typeof SUCCESS_NOTES
@@ -22,6 +29,8 @@ type Action =
 export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
   (state: IState, action: Action) => {
     switch (action.type) {
+      case SELECT_NOTE:
+        return { ...state, activeNote: action.payload.note }
       case FETCH_NOTES:
         return { ...state, loading: true, failure: false }
 
@@ -46,5 +55,6 @@ export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
     tags: [],
     loading: false,
     failure: false,
+    activeNote: undefined,
   }
 )

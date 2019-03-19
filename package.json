@@ -6,7 +6,7 @@
   "homepage": "https://bottle.polrk.com",
   "scripts": {
     "start": "parcel src/index.html -p 3000",
-    "build": "parcel build ./src/index.html --public-url '/'",
+    "build": "parcel build ./src/index.html --public-url '/' && cp CNAME ./dist",
     "prettify": "prettier --write './src/**/*.{ts,tsx,css,scss}'",
     "lint": "tslint-config-prettier-check ./tslint.json",
     "test": "jest",

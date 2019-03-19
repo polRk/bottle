@@ -1,2 +1,11 @@
 .Main {
+  display: grid;
+  grid-gap: 24px;
+  margin-bottom: 32px;
+  grid-template-columns: repeat(6, 1fr);
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 16px;
+  }
 }

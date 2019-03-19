@@ -28,6 +28,7 @@
     padding: 0;
     width: 32px;
     height: 32px;
+    opacity: 0.4;
 
     > svg {
       padding: 10px 8px;
@@ -38,6 +39,7 @@
   &_filter:focus,
   &_selected {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    opacity: 1;
   }
 
   &-Group {

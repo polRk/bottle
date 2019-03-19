@@ -3,7 +3,6 @@
 
   &-Form {
     display: flex;
-
     input {
       outline: none;
     }
@@ -12,8 +11,8 @@
   &-Input {
     flex: 1;
     border: 2px solid #e6e6e6;
-    box-sizing: border-box;
-    border-radius: 4px;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
     background: #fff;
     font-size: 15px;
     position: relative;
@@ -28,6 +27,14 @@
     &::-webkit-search-cancel-button {
       display: none;
     }
+  }
+
+  &-Clear {
+    border: 2px solid #e6e6e6;
+    border-right: none;
+    border-left: none;
+    background: transparent;
+    padding: 8px;
   }
 
   &-Label {
@@ -48,7 +55,6 @@
     background: #e6e6e6;
     border-radius: 0 4px 4px 0;
     font-size: 15px;
-    line-height: 32px;
     padding: 0 16px;
     border: none;
     cursor: pointer;

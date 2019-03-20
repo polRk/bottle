@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { INoteText } from '../../shared'
+import { hex2rgba, INoteText } from '../../shared'
 import {
   noteCN,
+  renderActions,
   renderAttachments,
   renderReminder,
   renderTags,
@@ -17,21 +18,25 @@ export const NoteText: React.FC<{ note: INoteText }> = ({ note }) => {
   return (
     <>
       {renderReminder(note)}
-      <div
-        className={noteCN('Content')}
-        style={{
-          backgroundColor: color ? color.color : undefined,
-        }}
-      >
-        <div className={noteCN('Header')}>
-          {note.title && <h2>{note.title}</h2>}
-          {note.text && <p>{note.text}</p>}
-        </div>
-        <div className={noteCN('Footer')}>
-          {renderTags(note, tags)}
-          {renderTimestamp(note)}
+      <div className={noteCN('ContentOverlay')}>
+        <div
+          className={noteCN('Content')}
+          style={{
+            backgroundColor: color ? hex2rgba(color.color, 0.4) : undefined,
+          }}
+        >
+          <div className={noteCN('Header')}>
+            {note.title && <h2>{note.title}</h2>}
+            {note.text && <p>{note.text}</p>}
+          </div>
+          <div className={noteCN('Footer')}>
+            {renderTags(note, tags)}
+            {renderActions(note)}
+            {renderTimestamp(note)}
+          </div>
         </div>
       </div>
+
       {renderAttachments(note)}
     </>
   )

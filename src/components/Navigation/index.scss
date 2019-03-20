@@ -2,7 +2,17 @@
   grid-area: navigation;
   justify-self: end;
 
-  @media screen and (max-width: 1020px) {
+  &-Links {
+    @media screen and (max-width: 1020px) {
+      display: none;
+    }
+  }
+
+  &-Expand {
     display: none;
+
+    @media screen and (max-width: 1020px) {
+      display: flex;
+    }
   }
 }

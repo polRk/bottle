@@ -73,6 +73,16 @@
     }
   }
 
+  &-Content_type_list {
+    grid-auto-rows: 1fr auto auto;
+  }
+
+  &-ToDoList {
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &-Header {
     grid-template-rows: max-content;
 

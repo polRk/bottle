@@ -9,6 +9,7 @@ import {
   renderTimestamp,
 } from './index'
 import { useGlobalState } from '../../store'
+import { Checkbox } from '../Checkbox'
 
 export const NoteList: React.FC<{ note: INoteList }> = ({ note }) => {
   const [tags] = useGlobalState('tags')
@@ -19,7 +20,7 @@ export const NoteList: React.FC<{ note: INoteList }> = ({ note }) => {
     <>
       {renderReminder(note)}
       <div className={noteCN('ContentOverlay')}>
-        <div className={noteCN('Content')}>
+        <div className={noteCN('Content', { type: 'list' })}>
           <div
             className={noteCN('Header')}
             style={{
@@ -27,9 +28,28 @@ export const NoteList: React.FC<{ note: INoteList }> = ({ note }) => {
             }}
           >
             <h2>{note.title}</h2>
-            {note.items.map(item => (
-              <span key={item.text}>{item.text}</span>
-            ))}
+            {note.items
+              .filter(item => !item.checked)
+              .map(item => (
+                <Checkbox
+                  key={item.text}
+                  isChecked={item.checked}
+                  text={item.text}
+                  onChange={console.log}
+                />
+              ))}
+          </div>
+          <div className={noteCN('ToDoList')}>
+            {note.items
+              .filter(item => item.checked)
+              .map(item => (
+                <Checkbox
+                  key={item.text}
+                  isChecked={item.checked}
+                  text={item.text}
+                  onChange={console.log}
+                />
+              ))}
           </div>
           <div className={noteCN('Footer')}>
             {renderTags(note, tags)}

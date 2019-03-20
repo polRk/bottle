@@ -8,6 +8,7 @@ interface IButtonProps {
   appearance?: 'primary' | 'link' | 'filter'
   isSelected?: boolean
   bgColor?: string
+  onClick?: () => void
 }
 
 export const Button: React.FC<IButtonProps> = ({
@@ -15,6 +16,7 @@ export const Button: React.FC<IButtonProps> = ({
   children,
   bgColor,
   isSelected,
+  onClick,
 }) => {
   return (
     <button
@@ -26,6 +28,7 @@ export const Button: React.FC<IButtonProps> = ({
         )
       )}
       style={{ backgroundColor: bgColor }}
+      onClick={onClick}
     >
       {children}
     </button>

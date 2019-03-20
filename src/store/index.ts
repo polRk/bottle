@@ -3,6 +3,8 @@ import {
   FAILURE_NOTES,
   FETCH_NOTES,
   SELECT_NOTE,
+  ADD_COLOR_FILTER,
+  DELETE_COLOR_FILTER,
   SUCCESS_NOTES,
 } from './constants'
 import { IColor, Note, ITag } from '../shared'
@@ -14,7 +16,7 @@ export interface IState {
   tags: ITag[]
   loading: boolean
   failure: boolean
-  activeNote?: Note
+  colorFilter: number[]
 }
 
 type Action =
@@ -25,6 +27,8 @@ type Action =
       payload: { notes: Note[]; colors: IColor[]; tags: ITag[] }
     }
   | { type: typeof FAILURE_NOTES; message: string }
+  | { type: typeof ADD_COLOR_FILTER; color: number }
+  | { type: typeof DELETE_COLOR_FILTER; color: number }
 
 export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
   (state: IState, action: Action) => {
@@ -33,7 +37,6 @@ export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
         return { ...state, activeNote: action.payload.note }
       case FETCH_NOTES:
         return { ...state, loading: true, failure: false }
-
       case SUCCESS_NOTES:
         return {
           ...state,
@@ -41,10 +44,17 @@ export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
           loading: false,
           failure: false,
         }
-
       case FAILURE_NOTES:
         return { ...state, loading: false, failure: true }
-
+      case ADD_COLOR_FILTER:
+        return { ...state, colorFilter: [...state.colorFilter, action.color] }
+      case DELETE_COLOR_FILTER:
+        return {
+          ...state,
+          colorFilter: state.colorFilter.filter(
+            color => color !== action.color
+          ),
+        }
       default:
         return state
     }
@@ -55,6 +65,6 @@ export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
     tags: [],
     loading: false,
     failure: false,
-    activeNote: undefined,
+    colorFilter: [],
   }
 )

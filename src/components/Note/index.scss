@@ -124,6 +124,10 @@
     grid-gap: 16px;
     grid-auto-columns: min-content;
     visibility: hidden;
+
+    svg:hover {
+      fill-opacity: 1;
+    }
   }
 
   &-Timestamp {

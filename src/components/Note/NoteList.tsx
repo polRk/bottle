@@ -26,6 +26,7 @@ export const NoteList: React.FC<{ note: INoteList }> = ({ note }) => {
               backgroundColor: color ? hex2rgba(color.color, 0.4) : undefined,
             }}
           >
+            <h2>{note.title}</h2>
             {note.items.map(item => (
               <span key={item.text}>{item.text}</span>
             ))}

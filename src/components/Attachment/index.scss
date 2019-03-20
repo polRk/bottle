@@ -34,12 +34,12 @@
     display: grid;
     align-items: center;
     grid-gap: 24px;
-    justify-items: end;
 
     &_type_image {
       grid-template-columns: auto 1fr;
       overflow-x: auto;
       overflow-y: hidden;
+      justify-items: end;
     }
     &_type_link {
     }

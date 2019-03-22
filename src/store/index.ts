@@ -7,11 +7,11 @@ import {
   DELETE_COLOR_FILTER,
   SUCCESS_NOTES,
 } from './constants'
-import { IColor, Note, ITag } from '../shared'
+import { IColor, ITag, Note, Notes } from '../shared'
 import { unionBy } from 'lodash'
 
 export interface IState {
-  notes: Note[]
+  notes: Notes
   colors: IColor[]
   tags: ITag[]
   loading: boolean
@@ -24,7 +24,7 @@ type Action =
   | { type: typeof FETCH_NOTES }
   | {
       type: typeof SUCCESS_NOTES
-      payload: { notes: Note[]; colors: IColor[]; tags: ITag[] }
+      payload: { notes: Notes; colors: IColor[]; tags: ITag[] }
     }
   | { type: typeof FAILURE_NOTES; message: string }
   | { type: typeof ADD_COLOR_FILTER; color: number }
@@ -60,7 +60,7 @@ export const { GlobalStateProvider, dispatch, useGlobalState } = createStore(
     }
   },
   {
-    notes: [],
+    notes: new Notes([]),
     colors: [],
     tags: [],
     loading: false,

@@ -1,6 +1,12 @@
 import * as React from 'react'
 import { cn } from '@bem-react/classname'
 import './index.scss'
+import { NoteText } from './NoteText'
+import { NoteImage } from './NoteImage'
+import { NoteList } from './NoteList'
+import * as moment from 'moment'
+import 'moment/locale/ru'
+import { Attachment, AttachmentContainer } from '../Attachment'
 import {
   INoteAttachmentImage,
   INoteAttachmentLink,
@@ -8,12 +14,6 @@ import {
   Note,
   NoteAttachmentType,
 } from '../../shared'
-import { NoteText } from './NoteText'
-import { NoteImage } from './NoteImage'
-import { NoteList } from './NoteList'
-import * as moment from 'moment'
-import 'moment/locale/ru'
-import { Attachment, AttachmentContainer } from '../Attachment'
 
 export const noteCN = cn('Note')
 

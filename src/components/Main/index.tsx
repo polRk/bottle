@@ -9,6 +9,7 @@ const mainCN = cn('Main')
 export const Main: React.FC = () => {
   const [notes] = useGlobalState('notes')
   const [colorFilter] = useGlobalState('colorFilter')
+
   return (
     <main className={mainCN()}>
       {notes

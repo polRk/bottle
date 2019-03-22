@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { NoteAttachment, NoteAttachmentType } from '../../shared'
 import { cn } from '@bem-react/classname'
 import './index.scss'
+import { NoteAttachment, NoteAttachmentType } from '../../shared'
 
 const attachmentCN = cn('Attachment')
 

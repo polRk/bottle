@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { hex2rgba, INoteText } from '../../shared'
+import { hex2rgba, ICardText } from '../../shared'
 import {
   noteCN,
   renderActions,
@@ -10,7 +10,7 @@ import {
 } from './index'
 import { useGlobalState } from '../../store'
 
-export const NoteText: React.FC<{ note: INoteText }> = ({ note }) => {
+export const NoteText: React.FC<{ note: ICardText }> = ({ note }) => {
   const [tags] = useGlobalState('tags')
   const [colors] = useGlobalState('colors')
   const color = colors.find(color => color.id === note.color)

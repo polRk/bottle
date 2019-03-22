@@ -8,6 +8,7 @@ import { Filters } from './Filters'
 import { dispatch } from '../store'
 import { FAILURE_NOTES, FETCH_NOTES, SUCCESS_NOTES } from '../store/constants'
 import { useEffect } from 'react'
+import { Notes } from '../shared'
 
 const appCN = cn('App')
 
@@ -25,7 +26,10 @@ export const App: React.FC = () => {
     )
       .then(resp => resp.json())
       .then((data: IResponse) =>
-        dispatch({ type: SUCCESS_NOTES, payload: data })
+        dispatch({
+          type: SUCCESS_NOTES,
+          payload: { ...data, notes: new Notes(Notes.factory(data.notes)) },
+        })
       )
       .catch(error => dispatch({ type: FAILURE_NOTES, message: error }))
   }, [])

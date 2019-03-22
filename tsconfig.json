@@ -12,6 +12,7 @@
       "dom",
       "esnext"
     ],
+    "downlevelIteration": true,
     "outDir": "./lib"
   },
   "include": [

@@ -91,7 +91,7 @@ export class Notes implements Iterable<Note> {
     })
   }
 
-  private getnoteSize(note: Note): NoteSize {
+  private getNoteSize(note: Note): NoteSize {
     switch (note.type) {
       case NoteType.list:
         return NoteSize.l
@@ -109,7 +109,7 @@ export class Notes implements Iterable<Note> {
       ...note,
       id: random(),
       archived,
-      size: note.size ? note.size : this.getnoteSize(note),
+      size: note.size ? note.size : this.getNoteSize(note),
     }
 
     this.push(newNote)

@@ -32,7 +32,6 @@ describe('Api', () => {
   test('It should response all notes', async () => {
     const response = await request(app).get('/api/notes')
 
-    console.log(response.body)
     expect(response.status).toBe(200)
     expect(response.body).toMatchObject(
       expect.arrayContaining([

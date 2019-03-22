@@ -11,8 +11,8 @@ export interface IColor {
 }
 
 export interface INoteBase {
-  created: number
   id?: number
+  created: number
   archived?: boolean
   title?: string
   attachments?: Array<NoteAttachment>

@@ -143,32 +143,6 @@ export class Notes implements Iterable<Note> {
     return this.notes.push(...notes)
   }
 
-  entries() {
-    return this.notes.entries()
-  }
-
-  map<U>(
-    callbackfn: (value: Note, index: number, array: Notes) => U,
-    thisArg?: any
-  ): U[] {
-    const result: U[] = []
-
-    for (const [index, note] of this.entries()) {
-      result.push(callbackfn(note, index, new Notes(this.toArray())))
-    }
-
-    return result
-  }
-
-  foreach(
-    callbackfn: (value: Note, index: number, array: Notes) => void,
-    thisArg?: any
-  ): void {
-    for (const [index, note] of [...this.notes].entries()) {
-      callbackfn(note, index, new Notes(this.toArray()))
-    }
-  }
-
   filter(
     callbackfn: (value: Note, index: number, array: Notes) => boolean
   ): Notes {

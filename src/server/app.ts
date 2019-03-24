@@ -52,13 +52,13 @@ api.get('/notes', (req, res) => {
   if (color && !data.colors.find(c => c.id == color)) {
     res.status(400).json({ message: 'Incorrect color' })
   } else {
-    let filteredByAcrhived = archived
+    let filteredByArchived = archived
       ? notes.filter(note => note.archived || false)
       : notes
 
     let filteredByColor = color
-      ? filteredByAcrhived.filter(note => note.color == color)
-      : filteredByAcrhived
+      ? filteredByArchived.filter(note => note.color == color)
+      : filteredByArchived
 
     res.json(filteredByColor.toArray())
   }

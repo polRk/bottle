@@ -5,7 +5,6 @@ import { SELECT_NOTE } from '../../store/constants'
 import { INoteImage, INoteList, INoteText, Note, NoteType } from '../../shared'
 
 export const NoteWrapper: React.FC<{ note: Note }> = ({ note }) => {
-  console.log(note)
   const noteType = {
     [NoteType.text]: <NoteText note={note as INoteText} />,
     [NoteType.image]: <NoteImage note={note as INoteImage} />,

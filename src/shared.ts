@@ -153,6 +153,10 @@ export class Notes implements Iterable<Note> {
     return new Notes(this.notes.filter(callbackfn))
   }
 
+  map<U>(callbackfn: (value: Note, index: number, array: Note[]) => U): U[] {
+    return this.notes.map(callbackfn)
+  }
+
   *[Symbol.iterator]() {
     for (const note of this.notes) {
       yield note

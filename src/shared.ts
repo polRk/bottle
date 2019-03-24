@@ -78,7 +78,7 @@ export class Notes implements Iterable<Note> {
   private readonly notes: Note[] = []
 
   constructor(notes: Note[]) {
-    this.notes = [...notes]
+    this.notes = notes
   }
 
   static factory(notes: Note[]): Note[] {
@@ -135,6 +135,10 @@ export class Notes implements Iterable<Note> {
     return false
   }
 
+  findNote(id: number): Note | undefined {
+    return this.notes.find(note => note.id === id)
+  }
+
   toArray(): Note[] {
     return [...this.notes]
   }
@@ -144,18 +148,9 @@ export class Notes implements Iterable<Note> {
   }
 
   filter(
-    callbackfn: (value: Note, index: number, array: Notes) => boolean
+    callbackfn: (value: Note, index: number, array: Note[]) => boolean
   ): Notes {
-    const result: Note[] = []
-
-    for (const [index, note] of [...this.notes].entries()) {
-      const rb = callbackfn(note, index, new Notes(this.toArray()))
-      if (rb) {
-        result.push(note)
-      }
-    }
-
-    return new Notes(Notes.factory(result))
+    return new Notes(this.notes.filter(callbackfn))
   }
 
   *[Symbol.iterator]() {

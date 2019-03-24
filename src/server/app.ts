@@ -39,7 +39,7 @@ api.get('/tags', (req, res) => {
 api.get('/notes/:id', (req, res) => {
   const { id } = req.params
 
-  const note = notes.toArray().find(c => c.id === parseInt(id))
+  const note = notes.findNote(parseInt(id))
 
   if (note) {
     return res.json(note)

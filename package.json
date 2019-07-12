@@ -18,7 +18,7 @@
   "dependencies": {
     "@bem-react/classname": "^1.4.4",
     "express": "^4.16.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
